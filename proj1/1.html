@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeti Clothing Store</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-4">Clothing Store</h1>
+        <div class="flex mb-4">
+        <input v-model="searchQuery" type="text" class="w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring focus:ring-blue-500" placeholder="Search clothes (min 3 characters)">
+    </div>
+    <ul class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <li v-for="item in filteredItems" :key="item.id" class="rounded-md border border-gray-300 p-4">
+        <img :src="item.image" alt="" class="w-full h-100 object-cover rounded-t-md">
+        <h3 class="text-lg font-medium mt-2">{{ item.name }}</h3>
+        <p class="text-gray-600">{{ item.price }}</p>
+        </li>
+    </ul>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
